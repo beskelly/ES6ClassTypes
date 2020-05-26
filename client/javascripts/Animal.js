@@ -60,10 +60,7 @@ class Dog extends Animal {
 
   stop() {
     super.stop();
-  }
-
-  run() {
-    super.run();
+    console.log(this.bark());
   }
 
 }
