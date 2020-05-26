@@ -2,6 +2,10 @@
 
 let controller = function() {
 
+  if (localStorage.getItem("toDoList")) {
+    $(".comments").html(localStorage.getItem("toDoList"));
+  }
+
   let addCommentFromInputBox = function() {
     //Semmy uses "$" to name variables that will contain jQuery objects
     let $new_comment;
@@ -12,8 +16,17 @@ let controller = function() {
       $(".comments").append($new_comment);
       //$new_comment.fadeIn();
       $(".comment-input input").val("");
+
+      //log the list of paragraph elements
+      console.log($(".comments").html());
+      localStorage.setItem("toDoList", $(".comments").html());
     }
   };
+
+  if ($(".comment-input input").val() !== "") {
+
+
+  }
 
   $(".comment-input button").on("click", function(event) {
     addCommentFromInputBox();

@@ -47,7 +47,24 @@ class Rabbit extends Animal {
 
 // Inherit from Animal
 class Dog extends Animal {
-  //your code goes here..
+  constructor(name, breed, weight, noise) {
+    super(name);
+    this.breed = breed;
+    this.weight = weight;
+    this.noise = noise;
+  }
+
+  bark() {
+    return(`${this.noise} ${this.noise}!`);
+  }
+
+  stop() {
+    super.stop();
+  }
+
+  run() {
+    super.run();
+  }
 
 }
 
